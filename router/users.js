@@ -2,20 +2,16 @@ const express = require('express')
 const router = express.Router()
 
 const usercontroller = require('../controllers/users')
-router.get('/users', usercontroller.index)
-let users = [
-  {id: 1, nama: "Bangjoule", email: "epiczakung17@gmail.com"},
-  {id: 2, nama: "Zaen", email: "Zaeputra@gmail.com"},
-  {id: 3, nama: "Kakvela", email: "Vel@gmail.com"}
-]
-
+router.get('/user', usercontroller.index)
 
 router.get('/users', usercontroller.index )
 
-  router.post('/users', usercontroller.store)
+router.get('/user/:id', usercontroller.show)
+
+  router.post('/user', usercontroller.store)
   
-  router.put('/users/:id', usercontroller.update)
+  router.put('/user/:id', usercontroller.update)
   
-  router.delete('/users/:id', usercontroller.delete)
+  router.delete('/user/:id', usercontroller.delete)                                                         
 
   module.exports =router
